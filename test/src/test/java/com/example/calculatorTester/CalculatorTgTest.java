@@ -2,12 +2,15 @@ package com.example.calculatorTester;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.stream.Stream;
+
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 public class CalculatorTgTest extends BaseTest {
 
+    @Tag("trigonometric")
    @ParameterizedTest(name = "{0} => tg[{1}] = {2}")
     @MethodSource("tgParameters")
     public void testTg(String scenarioName, double input, double expected) {

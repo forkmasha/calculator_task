@@ -5,13 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 public class CalculatorDivTest extends BaseTest {
-
+    @Tag("operators")
     @ParameterizedTest(name = "{0} => {1} / {2} = {3}")
     @MethodSource("divDoubleParameters")
     public void testDoubleDiv(String scenarioName, double a, double b, double expected) {
